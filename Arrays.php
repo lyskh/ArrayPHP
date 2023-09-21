@@ -16,6 +16,21 @@ class ClassicBookList {
     }
 }
 
+public function addBookAtEnd(string $book_name) : void {
+        array_push($this->book_list, $book_name);
+    }
+
+    public function removeFirstItem() : void {
+        if (!empty($this->book_list)) {
+            array_shift($this->book_list);
+        }
+    }
+
+    public function displayFirstThreeItems() : array {
+        return array_slice($this->book_list, 0, 3);
+    }
+}
+
 
 $classicBooks = new ClassicBookList ([
     'Lord of the Rings',
@@ -26,7 +41,8 @@ $classicBooks = new ClassicBookList ([
 ]);
 
 $classicBooks->addBookOnTop('Pride and Prejudice');
-
+$classicBooks->addBookAtEnd('The Raven');
+$classicBooks->removeFirstItem();
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +55,7 @@ $classicBooks->addBookOnTop('Pride and Prejudice');
         <tr>
             <td style="text-align:center"><b>BOOK NAME</b></td>
         </tr>
-        <?php foreach($classicBooks->displayBookList() as $key => $value): 
+        <?php foreach($classicBooks->displayFirstThreeItems() as $key => $value): 
         ?>
         <tr>
             <td><?php echo $value; ?> </td>
