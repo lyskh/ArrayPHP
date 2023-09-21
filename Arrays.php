@@ -55,7 +55,9 @@ $classicBooks->removeFirstItem();
         <tr>
             <td style="text-align:center"><b>BOOK NAME</b></td>
         </tr>
-        <?php foreach($classicBooks->displayFirstThreeItems() as $key => $value): 
+        <?php foreach($classicBooks->displayFirstThreeItems() as $key => $value) {
+            echo  "<tr><td>" . "Book " . ($key + 1) . ": " . $value . "<br/>" . "</td></tr>";
+        }
         ?>
         <tr>
             <td><?php echo $value; ?> </td>
