@@ -14,9 +14,8 @@ class ClassicBookList {
     public function addBookOnTop(string $book_name) : void {
         array_unshift($this->book_list, $book_name);
     }
-}
 
-public function addBookAtEnd(string $book_name) : void {
+    public function addBookAtEnd(string $book_name) : void {
         array_push($this->book_list, $book_name);
     }
 
@@ -31,8 +30,7 @@ public function addBookAtEnd(string $book_name) : void {
     }
 }
 
-
-$classicBooks = new ClassicBookList ([
+$classicBooks = new ClassicBookList([
     'Lord of the Rings',
     'Chronicles of Narnia',
     'Wuthering Heights',
@@ -59,10 +57,6 @@ $classicBooks->removeFirstItem();
             echo  "<tr><td>" . "Book " . ($key + 1) . ": " . $value . "<br/>" . "</td></tr>";
         }
         ?>
-        <tr>
-            <td><?php echo $value; ?> </td>
-        </tr>
-        <?php endforeach; ?>
     </table>
 </body>
 </html>
